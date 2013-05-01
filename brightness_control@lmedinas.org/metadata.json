@@ -1,7 +1,7 @@
 {
     "uuid": "brightness_control@lmedinas.org",
     "version": 99,
-    "shell-version": ["3.2", "3.3", "3.4", "3.6"],
+    "shell-version": ["3.2", "3.3", "3.4", "3.6", "3.8"],
     "name": "Brightness Control",
     "description": "A helper letting you control your display brightness. Can be set to persist across reboots. Supports hover scrolling and custom keybindings for changing brightness. ###The original author is lmedinas. Special thanks to dsboger.",
     "url": "http://gitorious.org/gnome-shell-brightness-extension/gnome-shell-brightness-extension",

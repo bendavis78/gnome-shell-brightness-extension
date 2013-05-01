@@ -27,9 +27,9 @@ const PanelMenu = imports.ui.panelMenu;
 const PopupMenu = imports.ui.popupMenu;
 const Main = imports.ui.main;
 const GLib = imports.gi.GLib;
+const Gio = imports.gi.Gio;
 const Util = imports.misc.util;
 const Mainloop = imports.mainloop;
-const DBus = imports.dbus;
 const Shell = imports.gi.Shell;
 const Meta = imports.gi.Meta;
 const ExtensionUtils = imports.misc.extensionUtils;
@@ -40,39 +40,27 @@ const UUID = Name + "@lmedinas.org";
 const _ = imports.gettext.domain(UUID).gettext;
 const GCC_ = imports.gettext.domain('gnome-control-center-2.0').gettext;
 
-const BrightnessIface = {
-    name: 'org.gnome.SettingsDaemon.Power.Screen',
-    methods: [
-    {
-        name: 'GetPercentage',
-        inSignature: '',
-        outSignature: 'u'
-    },
-    {
-        name: 'SetPercentage',
-        inSignature: 'u',
-        outSignature: 'u'
-    },
-    {
-        name: 'StepUp',
-        inSignature: '',
-        outSignature: 'u'
-    },
-    {
-        name: 'StepDown',
-        inSignature: '',
-        outSignature: 'u'
-    }
-    ],
-    signals: [
-    {
-        name: 'Changed',
-        inSignature: ''
-    }
-    ]
-};
+const BrightnessIface = <interface name="org.gnome.SettingsDaemon.Power.Screen">
+<method name="GetPercentage">
+    <arg type="u" direction="out" />
+</method>
+<method name="SetPercentage">
+    <arg type="u" direction="in" />
+    <arg type="u" direction="out" />
+</method>
+<method name="StepUp">
+    <arg type="u" direction="out" />
+</method>
+<method name="StepDown">
+    <arg type="u" direction="out" />
+</method>
+<!--
+<signal name="Changed">
+    <arg type="" direction="in" />
+</signal>-->
+</interface>;
 
-const BrightnessDbus = DBus.makeProxyClass(BrightnessIface);
+const BrightnessDbus = Gio.DBusProxy.makeProxyWrapper(BrightnessIface);
 
 const KeyBindings = {
     'increasedisplaybrightness': function() {
@@ -100,12 +88,12 @@ ScreenBrightness.prototype = {
         PanelMenu.SystemStatusButton.prototype._init.call(this,
             'display-brightness-symbolic');
 
-        this._proxy = new BrightnessDbus(DBus.session,
+        this._proxy = new BrightnessDbus(Gio.DBus.session,
             'org.gnome.SettingsDaemon', '/org/gnome/SettingsDaemon/Power');
 
-        /* TODO: This doesn't seem to work on GS 3.6 */
-        this._onChangedId = this._proxy.connect('Changed',
-            Lang.bind(this, this._updateBrightness));
+//        /* TODO: This doesn't seem to work on GS > 3.4 */
+//        this._onChangedId = this._proxy.connect('Changed',
+//            Lang.bind(this, this._updateBrightness));
 
         let level = settings.get_string("level");
         persist = settings.get_boolean("persist");
@@ -129,7 +117,7 @@ ScreenBrightness.prototype = {
         this.menu.addMenuItem(this._slider);
         this.menu.addMenuItem(new PopupMenu.PopupSeparatorMenuItem());
         this.menu.addSettingsAction(GCC_("Brightness and Lock"),
-            'gnome-screen-panel.desktop');
+            'gnome-power-panel.desktop');
         this.newMenuItem = new PopupMenu.PopupMenuItem(_("Extension Settings"));
         this.menu.addMenuItem(this.newMenuItem);
         this.newMenuItem.connect("activate", Lang.bind(this, this._launchPrefs));
@@ -148,8 +136,9 @@ ScreenBrightness.prototype = {
                 break;
             case Clutter.ScrollDirection.UP:
             case Clutter.ScrollDirection.RIGHT:
-            default:
                 this._stepUp();
+                break;            
+            default:
                 break;
         }
     },
