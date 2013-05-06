@@ -116,7 +116,7 @@ ScreenBrightness.prototype = {
 
         this.menu.addMenuItem(this._slider);
         this.menu.addMenuItem(new PopupMenu.PopupSeparatorMenuItem());
-        this.menu.addSettingsAction(GCC_("Brightness and Lock"),
+        this.menu.addSettingsAction(GCC_("Power Settings"),
             'gnome-power-panel.desktop');
         this.newMenuItem = new PopupMenu.PopupMenuItem(_("Extension Settings"));
         this.menu.addMenuItem(this.newMenuItem);
