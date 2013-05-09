@@ -91,9 +91,8 @@ ScreenBrightness.prototype = {
         this._proxy = new BrightnessDbus(Gio.DBus.session,
             'org.gnome.SettingsDaemon', '/org/gnome/SettingsDaemon/Power');
 
-//        /* TODO: This doesn't seem to work on GS > 3.4 */
-//        this._onChangedId = this._proxy.connect('Changed',
-//            Lang.bind(this, this._updateBrightness));
+        this._onChangedId = this._proxy.connectSignal('Changed',
+            Lang.bind(this, this._updateBrightness));
 
         let level = settings.get_string("level");
         persist = settings.get_boolean("persist");
@@ -212,7 +211,7 @@ function enable() {
     if (showIcon)
         Main.panel.addToStatusArea('brightness', indicator, 3);
 
-    for(key in KeyBindings) {
+    for(var key in KeyBindings) {
         global.display.add_keybinding(key,
             settings,
             Meta.KeyBindingFlags.NONE,
@@ -222,7 +221,7 @@ function enable() {
 }
 
 function disable() {
-    for(key in KeyBindings) {
+    for(var key in KeyBindings) {
         global.display.remove_keybinding(key);
     }
 
@@ -234,7 +233,7 @@ function disable() {
     }
 
     if (indicator !== null && indicator._onChangedId > -1)
-        indicator._proxy.disconnect(indicator._onChangedId);
+        indicator._proxy.disconnectSignal(indicator._onChangedId);
     settings = null;
     if (indicator !== null) indicator.destroy();
     indicator = null;
