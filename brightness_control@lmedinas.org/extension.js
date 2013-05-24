@@ -211,7 +211,7 @@ function enable() {
     if (showIcon)
         Main.panel.addToStatusArea('brightness', indicator, 3);
 
-    for(var key in KeyBindings) {
+    for(let key in KeyBindings) {
         global.display.add_keybinding(key,
             settings,
             Meta.KeyBindingFlags.NONE,
@@ -221,7 +221,7 @@ function enable() {
 }
 
 function disable() {
-    for(var key in KeyBindings) {
+    for(let key in KeyBindings) {
         global.display.remove_keybinding(key);
     }
 
