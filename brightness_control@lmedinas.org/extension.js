@@ -57,7 +57,8 @@ const BrightnessIface = <interface name="org.gnome.SettingsDaemon.Power.Screen">
 <!--
 <signal name="Changed">
     <arg type="" direction="in" />
-</signal>-->
+</signal>
+-->
 </interface>;
 
 const BrightnessDbus = Gio.DBusProxy.makeProxyWrapper(BrightnessIface);
@@ -91,6 +92,7 @@ ScreenBrightness.prototype = {
         this._proxy = new BrightnessDbus(Gio.DBus.session,
             'org.gnome.SettingsDaemon', '/org/gnome/SettingsDaemon/Power');
 
+        /* TODO: This doesn't seem to work on GS 3.6 & 3.8 */
         this._onChangedId = this._proxy.connectSignal('Changed',
             Lang.bind(this, this._updateBrightness));
 
@@ -136,7 +138,7 @@ ScreenBrightness.prototype = {
             case Clutter.ScrollDirection.UP:
             case Clutter.ScrollDirection.RIGHT:
                 this._stepUp();
-                break;            
+                break;
             default:
                 break;
         }
