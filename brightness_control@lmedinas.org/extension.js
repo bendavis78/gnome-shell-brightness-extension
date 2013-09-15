@@ -37,8 +37,7 @@ const Convenience = ExtensionUtils.getCurrentExtension().imports.convenience;
 
 const Name = "brightness_control";
 const UUID = Name + "@lmedinas.org";
-const _ = imports.gettext.domain(UUID).gettext;
-const GCC_ = imports.gettext.domain('gnome-control-center-2.0').gettext;
+const _ = imports.gettext.domain("gnome-shell-extension-brightness-control").gettext;
 
 const BrightnessIface = <interface name="org.gnome.SettingsDaemon.Power.Screen">
 <method name="GetPercentage">
@@ -105,7 +104,7 @@ ScreenBrightness.prototype = {
         this._updateBrightness();
 
         this.setIcon('display-brightness-symbolic');
-        let label = new PopupMenu.PopupMenuItem(GCC_("Brightness"), {
+        let label = new PopupMenu.PopupMenuItem(_("Brightness"), {
             reactive: false
         });
 
@@ -117,7 +116,7 @@ ScreenBrightness.prototype = {
 
         this.menu.addMenuItem(this._slider);
         this.menu.addMenuItem(new PopupMenu.PopupSeparatorMenuItem());
-        this.menu.addSettingsAction(GCC_("Power Settings"),
+        this.menu.addSettingsAction(_("Power Settings"),
             'gnome-power-panel.desktop');
         this.newMenuItem = new PopupMenu.PopupMenuItem(_("Extension Settings"));
         this.menu.addMenuItem(this.newMenuItem);
@@ -196,8 +195,7 @@ ScreenBrightness.prototype = {
 }
 
 function init(metadata) {
-    imports.gettext.bindtextdomain(Name,
-        metadata.path + "/locale");
+    Convenience.initTranslations(metadata['gettext-domain']);
 }
 
 function enable() {

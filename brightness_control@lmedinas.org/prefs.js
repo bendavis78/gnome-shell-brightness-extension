@@ -22,7 +22,7 @@ const Gtk = imports.gi.Gtk;
 const Lang = imports.lang;
 const ExtensionUtils = imports.misc.extensionUtils;
 const Convenience = ExtensionUtils.getCurrentExtension().imports.convenience;
-const Gettext = imports.gettext.domain("brightness_control");
+const Gettext = imports.gettext.domain("gnome-shell-extension-brightness-control");
 const _ = Gettext.gettext;
 const GObject = imports.gi.GObject;
 
@@ -108,7 +108,7 @@ function buildPrefsWidget() {
         ]);
 
     for(key in pretty_names) {
-        append_hotkey(model, settings, key, pretty_names[key]);
+        append_hotkey(model, settings, key, _(pretty_names[key]));
     }
 
     let treeview = new Gtk.TreeView({
