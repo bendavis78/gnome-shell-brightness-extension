@@ -1,0 +1,51 @@
+# French translation for Gnome Shell Extension Brightness Control
+# This file is distributed under the same license as Gnome Shell Extension Brightness Control.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: gnome-shell-extension-brightness-control\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: \n"
+"PO-Revision-Date: 2013-09-16 17:11+0100\n"
+"Last-Translator: Robert Jegliński <koluch@goldap.net.pl>\n"
+"Language-Team: Polish <koluch@goldap.net.pl>\n"
+"Language: pl\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n!=1);\n"
+"X-Generator: Poedit 1.5.4\n"
+
+msgid "Extension Settings"
+msgstr "Ustawienia rozszerzenia"
+
+msgid "Persist across reboots"
+msgstr "Przywróć zapamiętany poziom jasności ekranu po restarcie"
+
+msgid "Show top bar icon"
+msgstr "Pokaż ikonę rozszerzenia w systemowym pasku statusu"
+
+msgid "Decrease display brightness"
+msgstr "Zmniejsz jasność ekranu"
+
+msgid "Increase display brightness"
+msgstr "Zwiększ jasność ekranu"
+
+msgid "Keybindings"
+msgstr "Czynność"
+
+msgid "Accel"
+msgstr "Skrót"
+
+msgid ""
+"Remember or forget the brightness level across reboots. Even if you enable "
+"this, you might have to click the icon before rebooting in order to have the "
+"level saved!"
+msgstr ""
+"Zapamiętanie poziomu jasności ekranu po restarcie systemu. Nawet w przypadku "
+"włączenia tej opcji trzeba kliknąć ikonę rozszerzenia w celu zapamiętania "
+"aktualnego stanu (szczególnie jeśli zmiana jasności została dokonana "
+"klawiszami sprzętowymi)."
+
+msgid "Show or hide the extension icon in the top bar"
+msgstr "Pokaż (lub schowaj) ikonę w systemowym pasku statusu"

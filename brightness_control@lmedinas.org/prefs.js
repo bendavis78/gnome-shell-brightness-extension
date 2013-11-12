@@ -122,7 +122,7 @@ function buildPrefsWidget() {
     cellrend = new Gtk.CellRendererText();
 
     col = new Gtk.TreeViewColumn({
-        'title': 'Keybindings',
+        'title': _('Keybindings'),
         'expand': true
     });
 
@@ -156,7 +156,7 @@ function buildPrefsWidget() {
     });
 
     col = new Gtk.TreeViewColumn({
-        'title': 'Accel'
+        'title': _('Accel')
     });
 
     col.pack_end(cellrend, false);

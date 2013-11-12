@@ -17,7 +17,7 @@
  * You should have received a copy of the GNU General Public License
  * along with GSEBC. If not, see <http://www.gnu.org/licenses/>.
  *
- * Special thanks to dsboger.
+ * Special thanks to dsboger, pulb and koluch!
  *
  */
 
@@ -37,7 +37,9 @@ const Convenience = ExtensionUtils.getCurrentExtension().imports.convenience;
 
 const Name = "brightness_control";
 const UUID = Name + "@lmedinas.org";
-const _ = imports.gettext.domain("gnome-shell-extension-brightness-control").gettext;
+const _ = imports.gettext.domain(Name).gettext;
+const GCC_ = imports.gettext.domain('gnome-control-center-2.0').gettext;
+const GS_ = imports.gettext.domain('gnome-shell').gettext;
 
 const BrightnessIface = <interface name="org.gnome.SettingsDaemon.Power.Screen">
 <method name="GetPercentage">
@@ -104,7 +106,7 @@ ScreenBrightness.prototype = {
         this._updateBrightness();
 
         this.setIcon('display-brightness-symbolic');
-        let label = new PopupMenu.PopupMenuItem(_("Brightness"), {
+        let label = new PopupMenu.PopupMenuItem(GCC_("Display Brightness"), {
             reactive: false
         });
 
@@ -116,7 +118,7 @@ ScreenBrightness.prototype = {
 
         this.menu.addMenuItem(this._slider);
         this.menu.addMenuItem(new PopupMenu.PopupSeparatorMenuItem());
-        this.menu.addSettingsAction(_("Power Settings"),
+        this.menu.addSettingsAction(GS_("Power Settings"),
             'gnome-power-panel.desktop');
         this.newMenuItem = new PopupMenu.PopupMenuItem(_("Extension Settings"));
         this.menu.addMenuItem(this.newMenuItem);
@@ -209,20 +211,37 @@ function enable() {
         }));
     showIcon = settings.get_boolean(SETTING_ICON);
     if (showIcon)
-        Main.panel.addToStatusArea('brightness', indicator, 3);
-
-    for(let key in KeyBindings) {
-        global.display.add_keybinding(key,
-            settings,
-            Meta.KeyBindingFlags.NONE,
-            KeyBindings[key]
-            );
+        Main.panel.addToStatusArea('brightness', indicator, 3);        
+        
+    // from http://www.mail-archive.com/gnome-shell-list@gnome.org/msg07541.html
+    // and https://mail.gnome.org/archives/gnome-shell-list/2013-May/msg00096.html
+    // and https://git.gnome.org/browse/gnome-shell/tree/src/shell-keybinding-modes.h
+    for (let key in KeyBindings) {
+        if (Main.wm.addKeybinding) {
+                Main.wm.addKeybinding(key,
+                    settings, 
+                    Meta.KeyBindingFlags.NONE,
+                    Shell.KeyBindingMode.ALL, // Should work on lock screen (but doesn't) and popups (works)
+                    // Shell.KeyBindingMode.NORMAL | Shell.KeyBindingMode.MESSAGE_TRAY,
+                    KeyBindings[key]);
+            } 
+        else {
+            global.display.add_keybinding(key, 
+                settings, 
+                Meta.KeyBindingFlags.NONE,
+                KeyBindings[key]);
+            }
     }
 }
 
 function disable() {
-    for(let key in KeyBindings) {
-        global.display.remove_keybinding(key);
+    for (let key in KeyBindings) {
+        if (Main.wm.removeKeybinding) {
+            Main.wm.removeKeybinding(key);
+            } 
+        else {
+            global.display.remove_keybinding(key);
+        }
     }
 
     if (settings !== null && settingsIdArray !== null) {
