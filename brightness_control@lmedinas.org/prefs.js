@@ -31,8 +31,8 @@ let boolSettings;
 let stringSettings;
 
 const pretty_names = {
-    'decreasedisplaybrightness': 'Decrease display brightness',
-    'increasedisplaybrightness': 'Increase display brightness'
+    'decreasedisplaybrightness': _("Decrease display brightness"),
+    'increasedisplaybrightness': _("Increase display brightness")
 }
 
 function append_hotkey(model, settings, name, pretty_name) {
