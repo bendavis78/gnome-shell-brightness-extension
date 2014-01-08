@@ -17,7 +17,7 @@
  * You should have received a copy of the GNU General Public License
  * along with GSEBC. If not, see <http://www.gnu.org/licenses/>.
  *
- * Special thanks to dsboger, pulb and koluch!
+ * Special thanks to dsboger, pulb, koluch and jonius!
  *
  */
 
@@ -37,7 +37,7 @@ const Convenience = ExtensionUtils.getCurrentExtension().imports.convenience;
 
 const Name = "brightness_control";
 const UUID = Name + "@lmedinas.org";
-const _ = imports.gettext.domain(Name).gettext;
+const _ = imports.gettext.domain("gnome-shell-extension-brightness-control").gettext;
 const GCC_ = imports.gettext.domain('gnome-control-center-2.0').gettext;
 const GS_ = imports.gettext.domain('gnome-shell').gettext;
 
@@ -106,7 +106,7 @@ ScreenBrightness.prototype = {
         this._updateBrightness();
 
         this.setIcon('display-brightness-symbolic');
-        let label = new PopupMenu.PopupMenuItem(GCC_("Display Brightness"), {
+        let label = new PopupMenu.PopupMenuItem(GCC_("Brightness"), {
             reactive: false
         });
 

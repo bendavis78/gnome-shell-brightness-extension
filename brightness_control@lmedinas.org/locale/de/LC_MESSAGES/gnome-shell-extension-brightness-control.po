@@ -5,8 +5,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gnome-shell-extension-brightness-control\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-12-19 17:40+0100\n"
-"PO-Revision-Date: 2013-12-19 17:40+0100\n"
+"POT-Creation-Date: 2014-01-01 20:51+0100\n"
+"PO-Revision-Date: 2014-01-01 20:51+0100\n"
 "Last-Translator: Jonatan Zeidler <jonatan_zeidler@gmx.de>\n"
 "Language-Team: GERMAN <jonatan_zeidler@gmx.de>\n"
 "Language: de\n"
@@ -46,9 +46,20 @@ msgstr "Symbol in der oberen Leiste"
 msgid "Show or hide the extension icon in the top bar"
 msgstr "Das Symbol in der oberen Leiste anzeigen oder ausblenden."
 
+#: prefs.js:123
+msgid "Keybindings"
+msgstr "Tastenzuordnungen"
+
+#: prefs.js:157
+msgid "Accel"
+msgstr "Kürzel"
+
 #: extension.js:123
 msgid "Extension Settings"
 msgstr "Erweiterungseinstellungen"
+
+#~ msgid "Remember or forget the brightness level across reboots."
+#~ msgstr "Helligkeit beim Herunterfahren vergessen oder merken"
 
 #~ msgid "Brightness"
 #~ msgstr "Helligkeit"

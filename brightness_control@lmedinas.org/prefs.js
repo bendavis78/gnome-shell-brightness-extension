@@ -51,9 +51,7 @@ function init() {
     boolSettings = {
         persist: {
             label: _("Persist across reboots"),
-            help: _("Remember or forget the brightness level across reboots."
-                + " Even if you enable this, you might have to click the icon"
-                + " before rebooting in order to have the level saved!")
+            help: _("Remember or forget the brightness level across reboots. Even if you enable this, you might have to click the icon before rebooting in order to have the level saved!")
         },
         showicon: {
             label: _("Show top bar icon"),
@@ -122,7 +120,7 @@ function buildPrefsWidget() {
     cellrend = new Gtk.CellRendererText();
 
     col = new Gtk.TreeViewColumn({
-        'title': _('Keybindings'),
+        'title': _("Keybindings"),
         'expand': true
     });
 
@@ -156,7 +154,7 @@ function buildPrefsWidget() {
     });
 
     col = new Gtk.TreeViewColumn({
-        'title': _('Accel')
+        'title': _("Accel")
     });
 
     col.pack_end(cellrend, false);
