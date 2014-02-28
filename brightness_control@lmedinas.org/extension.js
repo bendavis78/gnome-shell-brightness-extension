@@ -106,7 +106,7 @@ ScreenBrightness.prototype = {
         this._updateBrightness();
 
         this.setIcon('display-brightness-symbolic');
-        let label = new PopupMenu.PopupMenuItem(GCC_("Brightness"), {
+        let label = new PopupMenu.PopupMenuItem(_("Brightness"), {
             reactive: false
         });
 
