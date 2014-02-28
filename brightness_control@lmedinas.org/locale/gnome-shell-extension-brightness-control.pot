@@ -1,0 +1,61 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2014-02-28 17:34+0100\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=CHARSET\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: extension.js:109
+msgid "Brightness"
+msgstr ""
+
+#: extension.js:123
+msgid "Extension Settings"
+msgstr ""
+
+#: prefs.js:34
+msgid "Decrease display brightness"
+msgstr ""
+
+#: prefs.js:35
+msgid "Increase display brightness"
+msgstr ""
+
+#: prefs.js:53
+msgid "Persist across reboots"
+msgstr ""
+
+#: prefs.js:54
+msgid ""
+"Remember or forget the brightness level across reboots. Even if you enable "
+"this, you might have to click the icon before rebooting in order to have the "
+"level saved!"
+msgstr ""
+
+#: prefs.js:57
+msgid "Show top bar icon"
+msgstr ""
+
+#: prefs.js:58
+msgid "Show or hide the extension icon in the top bar"
+msgstr ""
+
+#: prefs.js:123
+msgid "Keybindings"
+msgstr ""
+
+#: prefs.js:157
+msgid "Accel"
+msgstr ""
