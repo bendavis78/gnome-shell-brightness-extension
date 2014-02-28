@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: brightness_control\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: \n"
+"POT-Creation-Date: 2014-02-28 17:34+0100\n"
 "PO-Revision-Date: 2013-09-16 17:11+0100\n"
 "Last-Translator: Robert Jegliński <koluch@goldap.net.pl>\n"
 "Language-Team: Polish <koluch@goldap.net.pl>\n"
@@ -16,27 +16,27 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n!=1);\n"
 "X-Generator: Poedit 1.5.4\n"
 
+#: extension.js:109
+msgid "Brightness"
+msgstr ""
+
+#: extension.js:123
 msgid "Extension Settings"
 msgstr "Ustawienia rozszerzenia"
 
-msgid "Persist across reboots"
-msgstr "Przywróć zapamiętany poziom jasności ekranu po restarcie"
-
-msgid "Show top bar icon"
-msgstr "Pokaż ikonę rozszerzenia w systemowym pasku statusu"
-
+#: prefs.js:34
 msgid "Decrease display brightness"
 msgstr "Zmniejsz jasność ekranu"
 
+#: prefs.js:35
 msgid "Increase display brightness"
 msgstr "Zwiększ jasność ekranu"
 
-msgid "Keybindings"
-msgstr "Czynność"
+#: prefs.js:53
+msgid "Persist across reboots"
+msgstr "Przywróć zapamiętany poziom jasności ekranu po restarcie"
 
-msgid "Accel"
-msgstr "Skrót"
-
+#: prefs.js:54
 msgid ""
 "Remember or forget the brightness level across reboots. Even if you enable "
 "this, you might have to click the icon before rebooting in order to have the "
@@ -47,5 +47,18 @@ msgstr ""
 "aktualnego stanu (szczególnie jeśli zmiana jasności została dokonana "
 "klawiszami sprzętowymi)."
 
+#: prefs.js:57
+msgid "Show top bar icon"
+msgstr "Pokaż ikonę rozszerzenia w systemowym pasku statusu"
+
+#: prefs.js:58
 msgid "Show or hide the extension icon in the top bar"
 msgstr "Pokaż (lub schowaj) ikonę w systemowym pasku statusu"
+
+#: prefs.js:123
+msgid "Keybindings"
+msgstr "Czynność"
+
+#: prefs.js:157
+msgid "Accel"
+msgstr "Skrót"

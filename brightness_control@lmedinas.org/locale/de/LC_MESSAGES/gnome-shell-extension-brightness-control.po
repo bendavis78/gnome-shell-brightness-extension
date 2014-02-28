@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gnome-shell-extension-brightness-control\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-01-01 20:51+0100\n"
+"POT-Creation-Date: 2014-02-28 17:34+0100\n"
 "PO-Revision-Date: 2014-01-01 20:51+0100\n"
 "Last-Translator: Jonatan Zeidler <jonatan_zeidler@gmx.de>\n"
 "Language-Team: GERMAN <jonatan_zeidler@gmx.de>\n"
@@ -15,6 +15,14 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: Poedit 1.5.4\n"
 "X-Poedit-SourceCharset: UTF-8\n"
+
+#: extension.js:109
+msgid "Brightness"
+msgstr "Helligkeit"
+
+#: extension.js:123
+msgid "Extension Settings"
+msgstr "Erweiterungseinstellungen"
 
 #: prefs.js:34
 msgid "Decrease display brightness"
@@ -54,15 +62,8 @@ msgstr "Tastenzuordnungen"
 msgid "Accel"
 msgstr "Kürzel"
 
-#: extension.js:123
-msgid "Extension Settings"
-msgstr "Erweiterungseinstellungen"
-
 #~ msgid "Remember or forget the brightness level across reboots."
 #~ msgstr "Helligkeit beim Herunterfahren vergessen oder merken"
-
-#~ msgid "Brightness"
-#~ msgstr "Helligkeit"
 
 #~ msgid "Display Brightness"
 #~ msgstr "Bildschirmhelligkeit"

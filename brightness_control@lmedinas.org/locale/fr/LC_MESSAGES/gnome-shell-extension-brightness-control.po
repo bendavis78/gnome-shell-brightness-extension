@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: brightness_control\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: \n"
+"POT-Creation-Date: 2014-02-28 17:34+0100\n"
 "PO-Revision-Date: 2013-09-15 12:14+0100\n"
 "Last-Translator: Benjamin Danon <benjamin@sphax3d.org>\n"
 "Language-Team: \n"
@@ -16,32 +16,48 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n!=1);\n"
 "X-Generator: Poedit 1.5.4\n"
 
+#: extension.js:109
 msgid "Brightness"
 msgstr "Luminosité"
 
-msgid "Power Settings"
-msgstr "Paramètres de gestion de l’énergie"
-
+#: extension.js:123
 msgid "Extension Settings"
 msgstr "Paramètres de l’extension"
 
+#: prefs.js:34
 msgid "Decrease display brightness"
 msgstr "Diminuer la luminosité de l’écran"
 
+#: prefs.js:35
 msgid "Increase display brightness"
 msgstr "Augmenter la luminosité de l’écran"
 
+#: prefs.js:53
 msgid "Persist across reboots"
 msgstr "Persistent après un redémarrage"
 
+#: prefs.js:54
 msgid ""
 "Remember or forget the brightness level across reboots. Even if you enable "
 "this, you might have to click the icon before rebooting in order to have the "
 "level saved!"
 msgstr "Se souvenir du niveau de luminosité après un redémarrage"
 
+#: prefs.js:57
 msgid "Show top bar icon"
 msgstr "Afficher l’icône dans la barre supérieure"
 
+#: prefs.js:58
 msgid "Show or hide the extension icon in the top bar"
 msgstr "Afficher ou masquer l’icône de l’extension dans la barre supérieure"
+
+#: prefs.js:123
+msgid "Keybindings"
+msgstr ""
+
+#: prefs.js:157
+msgid "Accel"
+msgstr ""
+
+#~ msgid "Power Settings"
+#~ msgstr "Paramètres de gestion de l’énergie"
